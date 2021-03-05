@@ -14,7 +14,7 @@ public class Server {
 
         try {
             AuthService.connect();
-            server = new ServerSocket(8189);
+            server = new ServerSocket(8188);
             System.out.println("Сервер запущен!");
             clients = new Vector<>();
 

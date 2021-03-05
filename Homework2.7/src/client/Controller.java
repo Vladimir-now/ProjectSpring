@@ -26,7 +26,7 @@ public class Controller {
     DataOutputStream out;
 
     final String IP_ADRESS = "localhost";
-    final int PORT = 8189;
+    final int PORT = 8188;
 
     @FXML
     HBox bottomPanel;
