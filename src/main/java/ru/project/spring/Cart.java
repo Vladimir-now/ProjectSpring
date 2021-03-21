@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("cart")
+@Component
 public class Cart {
 
     private final List<Product> shopCart = new ArrayList<>();
