@@ -1,6 +1,7 @@
 package ru.project.hibernate.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -13,6 +14,13 @@ public class Product {
     private String title;
     @Column(name = "price")
     private int price;
+    @ManyToMany
+    @JoinTable(
+            name = "cart",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "consumer_id")
+    )
+    private List<Consumer> consumers;
 
     public Product() {
     }
@@ -25,6 +33,10 @@ public class Product {
     @Override
     public String toString() {
         return String.format("id: %s, title: %s, price: %s", id, title, price);
+    }
+
+    public List<Consumer> getConsumers() {
+        return consumers;
     }
 
     public Long getId() {

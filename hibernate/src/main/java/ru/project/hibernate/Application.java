@@ -1,17 +1,17 @@
 package ru.project.hibernate;
 
-import ru.project.hibernate.dao.ProductDAO;
-import ru.project.hibernate.entity.Product;
+import ru.project.hibernate.service.Service;
 
 public class Application {
     public static void main(String[] args) {
 
-        ProductDAO dao = ProductDAO.getInstance();
+        var service = new Service();
 
-        Product product = new Product("potato", 15);
+        System.out.println("Список купленных товаров покупателя с id = 2");
+        service.getListOfPurchasedProducts(2L).forEach(System.out::println);
+        System.out.println("Список покупателей купивших товар с id = 2");
+        service.getListOfProductConsumers(2L).forEach(System.out::println);
 
-        System.out.println(dao.findById(4L));
 
-        dao.getSession().close();
     }
 }
