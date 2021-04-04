@@ -1,4 +1,4 @@
-package ru.project.spring;
+package ru.project.spring.entity;
 
 public class Product {
     private int id;

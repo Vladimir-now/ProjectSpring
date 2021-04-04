@@ -1,11 +1,11 @@
 package ru.project.spring;
 
-import org.springframework.stereotype.Component;
+import ru.project.spring.entity.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class Cart {
 
     private final List<Product> shopCart = new ArrayList<>();

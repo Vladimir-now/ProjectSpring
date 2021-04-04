@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.project.spring.Product;
+import ru.project.spring.entity.Product;
 
 @RestController
 @RequestMapping("/xml")

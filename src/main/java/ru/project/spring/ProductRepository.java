@@ -1,12 +1,12 @@
 package ru.project.spring;
 
-import org.springframework.stereotype.Service;
+import ru.project.spring.entity.Product;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+
 public class ProductRepository {
 
     private final List<Product> repository = new ArrayList<>();
