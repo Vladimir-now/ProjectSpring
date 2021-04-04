@@ -1,31 +1,25 @@
 package ru.project.spring.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "product")
+@Data
+@NoArgsConstructor
+@Accessors(chain = true)
 public class Product {
-    private int id;
-    private String name;
-    private double price;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
 
+    @Column(name = "title", length = 128)
+    private String title;
 
-    public Product(int id, String name, double price) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "id: " + id + ", товар: " + name + ", цена: " + price + ".";
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
+    @Column(name = "price")
+    private int price;
 }
