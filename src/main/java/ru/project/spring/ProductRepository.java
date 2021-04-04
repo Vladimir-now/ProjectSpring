@@ -1,11 +1,12 @@
 package ru.project.spring;
 
-import org.springframework.stereotype.Component;
+import ru.project.spring.entity.Product;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("productRepository")
+
 public class ProductRepository {
 
     private final List<Product> repository = new ArrayList<>();
@@ -19,14 +20,23 @@ public class ProductRepository {
     }
 
     public void showProduct(int id) {
-        System.out.println(repository.stream().filter(x -> x.getId()==id));
+        System.out.println(repository.stream().filter(x -> x.getId() == id));
     }
 
     public void showProducts() {
-       repository.forEach(System.out::println);
+        repository.forEach(System.out::println);
     }
 
     public Product getProduct(int id) {
-        return repository.stream().filter(x -> x.getId()==id).findFirst().get();
+        return repository.stream().filter(x -> x.getId() == id).findFirst().get();
+    }
+
+    @PostConstruct
+    private void run() {
+        repository.add(new Product(1, "Cucumber", 121.5));
+        repository.add(new Product(2, "Apple", 99.0));
+        repository.add(new Product(3, "Tomato", 155.0));
+        repository.add(new Product(4, "Onion", 31.5));
+        repository.add(new Product(5, "Paprika", 255.5));
     }
 }
