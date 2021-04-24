@@ -5,11 +5,6 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog">
 
     <changeSet id="create_table" author="v.vasilyev">
-        <preConditions onFail="MARK_RAN">
-            <not>
-                <tableExists tableName="product"/>
-            </not>
-        </preConditions>
         <createTable tableName="product">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
