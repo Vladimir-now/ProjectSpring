@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.project.spring.repository.ProductRepository;
+import springfox.documentation.annotations.ApiIgnore;
 
 @Controller
 @RequestMapping("/")
+@ApiIgnore
 public class WebController {
 
     @Autowired

@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.project.spring.entity.Product;
 import ru.project.spring.repository.ProductRepository;
+import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
 @RequestMapping("/products")
 @RequiredArgsConstructor
+@ApiIgnore
 public class ProductController {
 
     private final ProductRepository productRepository;
